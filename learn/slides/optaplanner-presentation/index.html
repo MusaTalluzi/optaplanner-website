@@ -30,6 +30,7 @@
         }
 
 
+
     </script>
     <link rel="stylesheet" href="website/highlight/highlight.css">
     <link rel="stylesheet" href="website/optaplannerPresentation.css">
@@ -84,7 +85,6 @@
             <div style="margin-top: 80px;">
                 <p>
                     <span style="font-size: smaller">by</span> Musa Talluzi<br/>
-                    <span style="font-size: smaller">based on Geoffrey De Smet's slides</span>
                 </p>
             </div>
         </section>
@@ -133,34 +133,7 @@
                     <li><b>Quality coverage</b> - unit, integration and stress tests</li>
                 </ul>
             </section>
-            <section>
-                <img src="PlannerIntroduction/compatibility.png" class="fullImage">
-            </section>
-            <section>
-                <img src="PlannerIntroduction/kieFunctionalityOverview_0.png" class="fullImage">
-                <img src="PlannerIntroduction/kieFunctionalityOverview_1.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/kieFunctionalityOverview_2.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/kieFunctionalityOverview_3.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/kieFunctionalityOverview_4.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/kieFunctionalityOverview_5.png" class="fullImage fragment">
-            </section>
-            <section>
-                <h2>Is this A.I.?</h2>
-            </section>
-            <section>
-                <img src="PlannerIntroduction/theRightAIForTheJob_0.png" class="fullImage">
-                <img src="PlannerIntroduction/theRightAIForTheJob_1.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_2.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_3.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_4.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_5.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_6.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_7.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_8.png" class="fullImage fragment">
-                <img src="PlannerIntroduction/theRightAIForTheJob_9.png" class="fullImage fragment">
-            </section>
         </section>
-
 
         <section>
 
@@ -249,6 +222,18 @@
             <section>
                 <img src="extra/Presentation/npCompleteInterconnection.png" class="fullImage">
             </section>
+            <section>
+                <img src="PlannerIntroduction/theRightAIForTheJob_0.png" class="fullImage">
+                <img src="PlannerIntroduction/theRightAIForTheJob_1.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_2.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_3.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_4.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_5.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_6.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_7.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_8.png" class="fullImage fragment">
+                <img src="PlannerIntroduction/theRightAIForTheJob_9.png" class="fullImage fragment">
+            </section>
         </section>
 
 
@@ -264,17 +249,15 @@
             </section>
 
             <section>
-                <img src="UseCasesAndExamples/conferenceSchedulingValueProposition_0.png" class="fullImage">
-                <img src="UseCasesAndExamples/conferenceSchedulingValueProposition_1.png" class="fullImage fragment">
-                <img src="UseCasesAndExamples/conferenceSchedulingValueProposition_2.png" class="fullImage fragment">
-                <img src="UseCasesAndExamples/conferenceSchedulingValueProposition_3.png" class="fullImage fragment">
+                <img src="UseCasesAndExamples/conferenceSchedulingValueProposition.png" class="fullImage">
             </section>
             <section>
-                <h3>What is constraint solving?</h3>
-                <figure>
-                    <img src="PlannerIntroduction/plannerExamplesAppScreenshot.png"/>
-                    <p>Conference scheduling demo</p>
-                </figure>
+                <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_0.png" class="fullImage">
+                <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_1.png" class="fullImage fragment">
+                <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_2.png" class="fullImage fragment">
+                <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_3.png" class="fullImage fragment">
+                <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_4.png" class="fullImage fragment">
+                <img src="UseCasesAndExamples/conferenceSchedulingMilestonesTimeline_5.png" class="fullImage fragment">
             </section>
             <section>
                 <h3>Implementation</h3>
@@ -288,7 +271,7 @@
                 <h3>Define domain</h3>
             </section>
             <section>
-                <h3>Draw Conference scheduling class diagram</h3>
+                <img src="UseCasesAndExamples/conferenceSchedulingClassDiagram.png" class="fullImage">
             </section>
             <section>
                 <h3>Timeslot.java</h3>
@@ -352,13 +335,74 @@
                 </ul>
             </section>
             <section>
+                <h3>Easy Java score calculation</h3>
+                <ul>
+                    <li>Easy to implement</li>
+                    <li>Bridge an existing system</li>
+                    <li>Slow</li>
+                </ul>
+                <pre xml:space="preserve"><code class="java">public class ConferenceSchedulingEasyScoreCalculator
+    implements EasyScoreCalculator&lt;ConferenceSchedule&gt; {
+
+  public HardMediumSoft calculateScore(ConferenceSchedule cs) {
+    int hardScore = 0;
+    for (Talk talk : cs.getTalkList()) {
+        if (talk.getTimeslot() != null
+            && talk.hasUnavailableRoom()) {
+            hardScore--;
+        }
+    }
+    ...
+    return HardMediumSoft.valueOf(
+                    hardScore, mediumScore, softScore);
+  }
+}</code></pre>
+            </section>
+
+            <section>
+                <h3>Incremental Java score calculation</h3>
+                <ul>
+                    <li>Fast
+                        <ul>
+                            <li>Solution changes ⇒ recalculate score delta only</li>
+                        </ul>
+                    </li>
+                    <li>Hard to implement
+                        <ul>
+                            <li>Much boilerplate code</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Drools score calculation</h3>
+                <ul>
+                    <li>Incremental
+                        <ul>
+                            <li>No boilerplate code</li>
+                        </ul>
+                    </li>
+                    <li>Constraints in Drools Rule Language (DRL)
+                        <ul>
+                            <li>Declarative (like SQL, regular expression)</li>
+                        </ul>
+                    </li>
+                    <li>Integration opportunities
+                        <ul>
+                            <li>Drools Workbench</li>
+                            <li>Decision tables</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
                 <h3>Room unavailable timeslot constraint (DRL)</h3>
                 <pre xml:space="preserve"><code class="drl">rule "Room unavailable timeslot"
   when
-        ConferenceParametrization($weight : roomUnavailableTimeslot != 0)
         Talk(hasUnavailableRoom())
     then
-        scoreHolder.addHardConstraintMatch(kcontext, -$weight);
+        scoreHolder.penalize(kcontext);
 end</code></pre>
             </section>
             <section>
@@ -774,11 +818,13 @@ $ mvn exec:java
         });
 
 
+
 </script>
 <script src="website/highlight/highlight.js"></script>
 <script>
         hljs.initHighlightingOnLoad();
         hljs.LANGUAGES.drl=function(a){return{k:"rule when then end",c:[a.CLCM,a.CBLCLM,a.ASM,a.QSM]}}(hljs);
+
 
 
 </script>
